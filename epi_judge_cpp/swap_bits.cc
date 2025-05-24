@@ -1,7 +1,11 @@
 #include "test_framework/generic_test.h"
 long long SwapBits(long long x, int i, int j) {
-  // TODO - you fill in here.
-  return 0;
+	// 检查 i 和 j 位的值是否不同
+	if (((x >> i) & 1) != ((x >> j) & 1)) {
+		// 交换比特位
+		x ^= (1ll << i) | (1ll << j);
+	}
+	return x;
 }
 
 int main(int argc, char* argv[]) {
